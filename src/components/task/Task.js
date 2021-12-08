@@ -1,12 +1,16 @@
 import React from 'react';
 import './task.css';
 
-function Task() {
+function Task(props) {
   return (
 
     <div class="task" style={{backgroundColor: "red"}}>
         <div class="title">
-            Learn Html
+            {props.title}
+            <ul>
+                <li>duration :{props.duration}</li>
+                <li>type :{props.details.type} date :{props.details.date}</li>
+            </ul>
         </div>
         <div class="actions">
             <span>delete</span>
