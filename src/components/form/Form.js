@@ -1,7 +1,8 @@
 import React from 'react';
 import './form.css';
 const steps = [ 'Enter a task', 'click on button']
-function Form() {
+function Form(props) {
+props.sayHello();
   return (
   
   

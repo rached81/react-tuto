@@ -34,9 +34,13 @@ function App() {
         date: "05-05-2022"
     }
 ]
+const sayHello = () => { alert("Hello")}
+function sayHello2(){
+  alert('hello 2')
+}
   return (
     <div className="App">
-    <Form />
+    <Form sayHello={sayHello} />
      <List tasks = {tasks}/>
     </div>
   );
