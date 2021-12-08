@@ -2,13 +2,17 @@ import React from 'react';
 import Task from '../task/Task';
 import './list.css';
 
-function List() {
+function List(props) {
+  
   return (
     <div className="list">
-        <Task title=" Task 1" duration={60}  details = {{ type: "IT", date: "2022-05-02"}} />
-        <Task title=" Task 2"  duration={60}  details = {{ type: "IT", date: "2022-05-02"}} />
-        <Task title=" Task 3"  duration={60}  details = {{ type: "IT", date: "2022-05-02"}} />
-        <Task    duration={15} />
+      {    props.tasks.map((task) =>{
+            return <Task title={task.id} duration={task.duration}  type ={task.type} />
+        })
+    //    props.tasks.map((task) =>(
+    //         <Task title={task.id} duration={task.duration}  type ={task.type} />
+    //   ))
+    }   
 
     </div>
   );

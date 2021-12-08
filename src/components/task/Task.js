@@ -9,12 +9,8 @@ function Task(props) {
             {props.title}
             <ul>
                 <li>duration :{props.duration}</li>
-                {props.details&& 
-                <>
-                    <li>type :{props.details.type} </li>
-                    <li> date :{props.details.date}</li>
-                </>
-                }
+                <li>type :{props.type} </li>
+                <li> date :{props.date}</li>
             </ul>
         </div>
         <div class="actions">
