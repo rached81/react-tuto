@@ -8,7 +8,7 @@ function List() {
         <Task title=" Task 1" duration={60}  details = {{ type: "IT", date: "2022-05-02"}} />
         <Task title=" Task 2"  duration={60}  details = {{ type: "IT", date: "2022-05-02"}} />
         <Task title=" Task 3"  duration={60}  details = {{ type: "IT", date: "2022-05-02"}} />
-        <Task    details = {{ type: "IT", date: "2022-05-02"}}/>
+        <Task    duration={15} />
 
     </div>
   );
