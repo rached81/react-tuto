@@ -2,12 +2,18 @@ import logo from './logo.svg';
 import './App.css';
 import List from './components/list/List';
 import Form from './components/form/Form';
+import { useState } from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
-  const  tasks = [
+  const [ isVisible, setIsVisible] = useState(true);
+  const toggleVisibility = () => {
+    setIsVisible(!isVisible);
+  }
+  const  [tasks, setTasks] = useState([
     {
         id: 1,
-        title: "T1",
+        title: "Titre1",
         duration: 25,
         type: "Type 1",
         date: "05-05-2022"
@@ -33,15 +39,42 @@ function App() {
         type: "Type 3",
         date: "05-05-2022"
     }
-]
-const sayHello = () => { alert("Hello")}
+])
+const sayHello = () => { console.log("Hello")}
 function sayHello2(){
-  alert('hello 2')
+  console.log('hello 2')
+}
+const addTask = (title) =>{
+  const newTask = {id:"" + tasks.length + 1, title: title, duration: 15, type: "test", date: "22-10-2022"};
+  setTasks(tasks.concat(newTask))
+}
+const deleteTask = (id) =>{
+  setTasks(tasks.filter(task => task.id != id))
+}
+const updateTask = (newtask) =>{
+  // first solution
+  setTasks(tasks.map(task => {
+    if(task.id == newtask.id){
+      return newtask
+    }
+    return task
+  }))
 }
   return (
     <div className="App">
-    <Form sayHello={sayHello} />
-     <List tasks = {tasks}/>
+      <div className="toggle">
+      {/* 1ere solution */}
+        <button onClick={ ()=> toggleVisibility()}>Toggle Visibility</button>
+         {/* 2eme solution */}
+         <button onClick={toggleVisibility}>Toggle Visibility 2</button>
+      </div>
+      {isVisible && (
+        <div>
+          <Form sayHello={sayHello} addTask = {addTask} />
+        </div>
+      )}
+    
+     <List tasks = {tasks} deleteTask = {deleteTask} updateTask = {updateTask}/>
     </div>
   );
 }
