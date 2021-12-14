@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import "./Task.css"
+import "./task.css"
 export default function Task({ id, title, duration, deleteTask, updateTask }) {
   const [updateMode, setUpdateMode] = useState(false)
   const [titleToUpdate, setTitleToUpdate] = useState(title)
