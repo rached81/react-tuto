@@ -12,10 +12,10 @@ export default function Menu() {
           <ul>
            
             <li>
-              <Link to="/tasks">Tasks</Link>
+              <Link to="/teacher/tasks">Tasks</Link>
             </li>
             <li>
-              <Link to="/hello">Hello</Link>
+              <Link to="/teacher/hello">Hello</Link>
             </li>
           </ul>
         </nav>

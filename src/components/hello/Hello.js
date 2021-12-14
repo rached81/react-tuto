@@ -5,7 +5,6 @@ import './hello.css';
 function Hello() {
   return (
     <div className="hello">
-<Menu />
         <p>
           Hello .
           </p>

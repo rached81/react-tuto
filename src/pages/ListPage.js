@@ -146,7 +146,7 @@ function ListPage() {
   return (
 
     <div className="app">
-      <Menu />
+      
       <div className="toggle">
         <button onClick={toggleVisibility}>Toggle visibility</button>
       </div>
@@ -156,7 +156,7 @@ function ListPage() {
       <div>
         {loading && <div>   
               <div className="Gif">
-                  <img src="img/loading-bar.gif" width="833" alt="Loading Bar GIF - Loading Bar Waiting GIFs"  /> 
+                  <img src="/img/loading-bar.gif" width="833" alt="Loading Bar GIF - Loading Bar Waiting GIFs"  /> 
               </div>
             </div>}
         {!loading && isVisible && (
